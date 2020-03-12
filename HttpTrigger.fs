@@ -7,7 +7,7 @@ open Microsoft.AspNetCore.Http
 module HttpTrigger = 
 
     [<FunctionName "hello">]
-    let run (([<HttpTrigger(Extensions.Http.AuthorizationLevel.Anonymous, "GET", "POST", Route="api/v1/{*path}")>] req: HttpRequest)) = 
+    let run (([<HttpTrigger(Extensions.Http.AuthorizationLevel.Anonymous, "GET", "POST", Route="api/v1/{*path}")>] _req: HttpRequest)) = 
         "hello world"
         |> OkObjectResult :> ActionResult 
         |> async.Return 

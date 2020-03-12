@@ -1,0 +1,13 @@
+source https://www.nuget.org/api/v2
+
+storage: symlink
+framework: auto-detect
+
+nuget FSharp.Core
+nuget FSharp.Data
+nuget Microsoft.NET.Sdk.Functions
+
+# /!\ Remove when https://github.com/Azure/azure-functions-host/issues/5786 will be done
+#     Workaround: normally we don't have to reference directly this package. By pinning the package to 1.1.5, the function.json is generated /!\
+# nuget Microsoft.Azure.WebJobs.Script.ExtensionsMetadataGenerator 1.1.5
+
